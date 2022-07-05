@@ -76,7 +76,7 @@
 
     nixpkgs.url = "nixpkgs/nixpkgs-unstable";
     flake-utils.url = "github:numtide/flake-utils";
-    doom-private.url = "github:jjdosa/doom-private";
+    doom-private.url = "github:syryuauros/doom-private";
     doom-private.flake = false;
     evil-plugins.url = "github:tarao/evil-plugins";
     evil-plugins.flake = false;

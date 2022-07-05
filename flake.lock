@@ -40,13 +40,13 @@
       "locked": {
         "lastModified": 1656952142,
         "narHash": "sha256-+KqMjF3+R3QsslsqZKtFlix2UPUon8uznxRB8znLRKc=",
-        "owner": "jjdosa",
+        "owner": "syryuauros",
         "repo": "doom-private",
         "rev": "cf706a9c1c6f5cbafb1e073aa7d7b99889b8643c",
         "type": "github"
       },
       "original": {
-        "owner": "jjdosa",
+        "owner": "syryuauros",
         "repo": "doom-private",
         "type": "github"
       }
