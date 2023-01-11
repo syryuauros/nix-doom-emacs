@@ -2,9 +2,12 @@
 
 
   mk-doom-emacs = { extraPackages ? epkgs: [
-      epkgs.org-roam
-      epkgs.org-roam-ui
-      epkgs.org-roam-timestamps
+      websocket
+      simple-httpd
+      f
+      org-roam
+      org-roam-ui
+      org-roam-timestamps
       # epkgs.org-roam-bibtex
   ]
                   , emacsPackage ? emacsNativeComp
