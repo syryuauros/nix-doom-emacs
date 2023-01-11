@@ -2,6 +2,7 @@
 
 
   mk-doom-emacs = { extraPackages ? epkgs: [
+      syryu
       websocket
       simple-httpd
       f
