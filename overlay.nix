@@ -1,7 +1,7 @@
 { self, ... }@inputs : final: prev: with final; {
 
 
-  mk-doom-emacs = { extraPackages ? epkgs: [
+  mk-doom-emacs = { extraPackages ? epkgs: with epkgs; [
       #syryu
       websocket
       simple-httpd
