@@ -2,7 +2,7 @@
 
 
   mk-doom-emacs = { extraPackages ? epkgs: with epkgs; [
-      #syryu
+      sqlite3
       websocket
       simple-httpd
       f
