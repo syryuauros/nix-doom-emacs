@@ -2,14 +2,14 @@
 
 
   mk-doom-emacs = { extraPackages ? epkgs: with epkgs; [
-      sqlite3
-      websocket
-      simple-httpd
-      f
-      org-roam
-      org-roam-ui
-      org-roam-timestamps
-      #epkgs.org-roam-bibtex
+      # sqlite3
+      # websocket
+      # simple-httpd
+      # f
+      # org-roam
+      # org-roam-ui
+      # org-roam-timestamps
+      # #epkgs.org-roam-bibtex
   ]
                   , emacsPackage ? emacsNativeComp
                   , doomPrivateDir ? inputs.doom-private
