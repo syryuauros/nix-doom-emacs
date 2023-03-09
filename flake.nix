@@ -86,7 +86,7 @@
     consult.url = "github:minad/consult/c3608b1f634aebf8770ecb1d933a1ae9c34ecdf8";
     consult.flake = false;
 
-    nixpkgs.url = "nixpkgs/nixpkgs-unstable";
+    nixpkgs.url = "nixpkgs/nixpkgs-23.05";
     flake-utils.url = "github:numtide/flake-utils";
     flake-compat.url = "github:edolstra/flake-compat";
     flake-compat.flake = false;
