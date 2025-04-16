@@ -22,6 +22,28 @@ in
       '';
       apply = path: if lib.isStorePath path then path else builtins.path { inherit path; };
     };
+    doomPackageDir = mkOption {
+      description = ''
+        A Doom configuration directory from which to build the Emacs package environment.
+
+        Can be used, for instance, to prevent rebuilding the Emacs environment
+        each time the `config.el` changes.
+
+        Can be provided as a directory or derivation. If not given, package
+        environment is built against `doomPrivateDir`.
+      '';
+      default = cfg.doomPrivateDir;
+      apply = path: if lib.isStorePath path then path else builtins.path { inherit path; };
+      example = literalExample ''
+        doomPackageDir = pkgs.linkFarm "my-doom-packages" [
+           # straight needs a (possibly empty) `config.el` file to build
+           { name = "config.el"; path = pkgs.emptyFile; }
+           { name = "init.el"; path = ./doom.d/init.el; }
+           { name = "packages.el"; path = pkgs.writeText "(package! inheritenv)"; }
+           { name = "modules"; path = ./my-doom-module; }
+         ];
+       '';
+    };
     extraConfig = mkOption {
       description = ''
         Extra configuration options to pass to doom-emacs.
@@ -65,10 +87,10 @@ in
         package customization.
       '';
       type = with types; overlayType;
-      default = self: super: {  };
-      defaultText = "self: super {  }";
+      default = final: prev: { };
+      defaultText = "final: prev: { }";
       example = literalExample ''
-        self: super: {
+        final: prev: {
           magit-delta = super.magit-delta.overrideAttrs (esuper: {
             buildInputs = esuper.buildInputs ++ [ pkgs.git ];
           });
@@ -85,12 +107,13 @@ in
       emacs = pkgs.callPackage self {
         extraPackages = (epkgs: cfg.extraPackages);
         emacsPackages = pkgs.emacsPackagesFor cfg.emacsPackage;
-        inherit (cfg) doomPrivateDir extraConfig emacsPackagesOverlay;
+        inherit (cfg) doomPrivateDir doomPackageDir extraConfig emacsPackagesOverlay;
         dependencyOverrides = inputs;
       };
     in
     mkMerge ([
       {
+        # TODO: remove once Emacs 29+ is released and commonly available
         home.file.".emacs.d/init.el".text = ''
           (load "default.el")
         '';

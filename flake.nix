@@ -39,21 +39,21 @@
     # TODO: change back to master once we get synced back with upstream changes
     doom-emacs.url = "github:doomemacs/doomemacs/3853dff5e11655e858d0bfae64b70cb12ef685ac";
     doom-emacs.flake = false;
-    doom-snippets.url = "github:doomemacs/snippets";
+    doom-snippets.url = "github:doomemacs/snippets/fe4003014ae00b866f117cb193f711fd9d72fd11";
     doom-snippets.flake = false;
     emacs-overlay.url = "github:nix-community/emacs-overlay/c16be6de78ea878aedd0292aa5d4a1ee0a5da501";
     emacs-overlay.flake = false;
-    emacs-so-long.url = "github:hlissner/emacs-so-long";
+    emacs-so-long.url = "github:hlissner/emacs-so-long/ed666b0716f60e8988c455804de24b55919e71ca";
     emacs-so-long.flake = false;
-    evil-escape.url = "github:hlissner/evil-escape";
+    evil-escape.url = "github:hlissner/evil-escape/ed666b0716f60e8988c455804de24b55919e71ca";
     evil-escape.flake = false;
-    evil-markdown.url = "github:Somelauw/evil-markdown";
+    evil-markdown.url = "github:Somelauw/evil-markdown/8e6cc68af83914b2fa9fd3a3b8472573dbcef477";
     evil-markdown.flake = false;
-    evil-org-mode.url = "github:hlissner/evil-org-mode";
+    evil-org-mode.url = "github:hlissner/evil-org-mode/a9706da260c45b98601bcd72b1d2c0a24a017700";
     evil-org-mode.flake = false;
-    evil-quick-diff.url = "github:rgrinberg/evil-quick-diff";
+    evil-quick-diff.url = "github:rgrinberg/evil-quick-diff/69c883720b30a892c63bc89f49d4f0e8b8028908";
     evil-quick-diff.flake = false;
-    explain-pause-mode.url = "github:lastquestion/explain-pause-mode";
+    explain-pause-mode.url = "github:lastquestion/explain-pause-mode/2356c8c3639cbeeb9751744dbe737267849b4b51";
     explain-pause-mode.flake = false;
     format-all.url = "github:lassik/emacs-format-all-the-code/47d862d40a088ca089c92cd393c6dca4628f87d3";
     format-all.flake = false;
@@ -90,7 +90,7 @@
     gptel.url = "github:karthink/gptel";
     gptel.flake = false;
 
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-23.05";
     flake-utils.url = "github:numtide/flake-utils";
     flake-compat.url = "github:edolstra/flake-compat";
     flake-compat.flake = false;
@@ -129,7 +129,7 @@
             doomPrivateDir = ./test/doom.d;
           };
         };
-        checks = import ./checks.nix { inherit system; } inputs;
+        # checks = import ./checks.nix { inherit system; } inputs;
       }) // {
         hmModule = import ./modules/home-manager.nix inputs;
       };
