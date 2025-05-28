@@ -1,5 +1,6 @@
 { # The files would be going to ~/.config/doom (~/.doom.d)
 doomPrivateDir
+, doomPackageDir
 /* Extra packages to install
 
    Useful for non-emacs packages containing emacs bindings (e.g.
